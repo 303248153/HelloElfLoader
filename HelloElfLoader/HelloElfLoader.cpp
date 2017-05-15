@@ -165,7 +165,7 @@ namespace HelloElfLoader {
 
 		// 获取入口点
 		std::uint64_t entryPointAddress = *reinterpret_cast<const std::uint64_t*>(elfHeader.e_entry);
-		int(*entryPointFunc)() = reinterpret_cast<int(*)()>(entryPointAddress);
+		void(*entryPointFunc)() = reinterpret_cast<void(*)()>(entryPointAddress);
 		std::cout << "entry point: " << entryPointFunc << std::endl;
 		std::cout << "====== finish loading elf ======" << std::endl;
 
